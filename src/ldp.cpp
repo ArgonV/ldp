@@ -230,6 +230,8 @@ void server_loop(const ldp_options& opt, etymon::odbc_env* odbc)
 
     lg.write(log_level::info, "server", "",
             string("Server started") + (opt.cli_mode ? " (CLI mode)" : ""), -1);
+    lg.write(log_level::info, "server", "",
+             "SSL disabled for direct extraction", -1);
 
     etymon::odbc_conn conn(odbc, opt.db);
     dbtype dbt(&conn);
