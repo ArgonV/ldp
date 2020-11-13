@@ -302,7 +302,7 @@ bool retrieve_direct(const data_source& source, ldp_log* lg,
     // Select jsonb from table.direct_source_table and write to JSON file.
     etymon::Postgres db(source.direct.database_host, source.direct.database_port,
             source.direct.database_user, source.direct.database_password,
-            source.direct.database_name, "require");
+            source.direct.database_name, "disable");
     string sql = "SELECT jsonb FROM " +
         source.okapi_tenant + "_" + table.direct_source_table + ";";
     lg->write(log_level::detail, "", "", sql, -1);
